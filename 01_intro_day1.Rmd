@@ -1,0 +1,315 @@
+---
+title: "BootCamp R 2018"
+output:
+  rmarkdown::html_document:
+    theme: flatly
+    highlight: pygments
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(ggplot2)
+opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE, tidy = FALSE, cache = FALSE,results = 'asis' )
+```
+
+### Welcome!
+
+---
+
+### Goals and Objectives
+
+* Enhance and expand your practical knowledge of R
+
+* Replace large portions (the entirety?!) of your Excel based efforts with R
+
+* Enable you to use R in your research (and your BootCamp project!)
+
+* Generate beautiful custom figures. Assemble a figure library!
+
+* Play a very small part in helping to reduce [research debt](http://distill.pub/2017/research-debt/)
+
+
+---
+
+
+### Course Outline
+
+##### Day 1
+* Introduction & Goals & Expectations
+* Google's R Style guide
+* Basics
+* Vectorize
+* Functions
+* Exceptions, Error Messages, Debugging, Seeking Help
+* Reading / Writing data
+* Data Wrangling / Tidy Data
+
+##### Day 2 
+* Matching
+* Regular Expressions
+* Plotting with ggplot2
+* Exploratory data analysis
+* Projects & Reproducible workflows
+* Homework Assignment
+
+##### Day 3
+* Homework Review
+* Data Wrangling, part 2
+* Plotting with ggplot2, continued
+* Packages & Bioconductor
+* Pipelines
+* Clustering
+* Lightning Talks
+
+---
+
+### Disclaimer and Attribution
+
+**I claim absolutely no credit the content contained within this course**
+
+**Mostly borrowed, with every effort to include attribution, from a number of sources:**
+
+* Hadley Wickham - RStudio [!!]
+* Jenny Bryan - RStudio (on leave from The University of British Columbia)
+* Garrett Grolemund - RStudio
+* Chester Ismay - DataCamp
+* David Robinson - DataCamp
+* Jeff Leek - Johns Hopkins University Bloomberg School of Public Health
+* Patrick Burns - Burns Statistics
+* Michael J. Crawley - Professor at Imperial College at Silwood Park
+
+---
+
+### Programming Books
+
+"It's trivial, excercise left to the reader."
+
+![Programming books vs. Arithemetic](img/day1/comp_prog_books_math.jpg) 
+
+* source: Unknown via Twitter
+
+--- 
+
+### Techniques for success with programming
+
+#### The discipline to think logically, and the patience to practice.
+
+> R is a tool for statistics and data modeling. The R programming language is elegant, versatile, and has a highly expressive syntax designed around working with data. R is more than that, though — it also includes extremely powerful graphics capabilities. If you want to easily manipulate your data and present it in compelling ways, R is the tool for you.
+>
+> -- O'reilly Code School
+
+*** 
+
+> You're doing it right if you get frustrated: if you're not frustrated, you're (probably) not stretching yourself mentally.
+>
+> -- Hadley Wickham
+
+*** 
+
+> You're doing it right if everyday you invest a little time in learning something that only pays off in the long term.
+>
+> -- Hadley Wickham
+
+---
+
+### Practicality
+
+So hopefully you are convinced you can and should learn some programming...
+
+Reality:
+
+> "Herein lies the dirty secret about most ~~data scientists'~~ computational biologist work – it's more data munging than deep learning. The best minds of my generation are ~~deleting commas from log files~~ cleaning/munging/delousing, and that makes me sad. A Ph.D. is a terrible thing to waste."
+
+An paraphrased overstatement to be sure, but not without an underlying truth. 
+
+Data coercion and formatting is a fair amount of the programming road ahead.
+
+source: [adage.com](http://adage.com/article/digitalnext/dear-madison-avenue-set-data-scientists-free/298676/)
+
+---
+
+### How to ask a programming question?
+
+[How do I ask a good question? - Stack Overflow](http://stackoverflow.com/help/how-to-ask)
+
+* Be as specific as you can in describing your problem. Others will often need to duplicate the issue, even if they have worked with similiar code in the past. Simply saying 'function xxx doesn't work' is not helpful enough. Ask yourself what someone else might need to reproduce the problem on their system.
+
+* If __at all possible__ please include a reproducible example
+
+  * If the problem occurs in complicated or lengthy code, identify the problem function
+    and provide a simpler reproducible case for others.
+
+* Include sufficient context information, so that someone reading your question understands what your goal is with running your code or in doing a set of calculations in R. 
+
+  * Here is what I have tried.
+
+Try to avoid at all cost: __"my code doesn't work"__ (without providing any context).
+
+source: http://blog.revolutionanalytics.com/2014/01/how-to-ask-for-r-help.html
+
+### Getting Help
+
+Built in R help
+
+```{r eval=FALSE}
+
+help(read.table) # help with the function read.table
+
+?read.table # same as above, help with the function read.table
+
+example(read.table) # show an example of function read.table
+
+apropos("max") # list all the functions containing string "max"
+
+```
+
+Vignette
+
+```{r eval=FALSE}
+# get vignettes on using installed packages
+vignette()      # show available vingettes
+
+vignette("ggplot2-specs") # show specific vignette
+
+```
+
+There’s lots of ways to get help in case you are stuck:
+
+* Google is your friend! in particular, StackOverflow and R help are usually good resources for **troubleshooting** specific issues.
+
+* However, unfortunately, it is difficuly to **search** your way to computational understanding. 
+
+The Cancer Program / Broad / DFCI have a number of R resources.
+
+
+[* Appendix of Kieran Healy's data-viz](http://socviz.co/appendix.html)
+
+---
+
+### Vocabulary
+
+[* Hadley's R Vocabulary](http://adv-r.had.co.nz/Vocabulary.html)
+
+### Programming skills
+
+If you use R you want to be conversant with a set of packages that allows you to solve the following practical problems:
+
+* Ingest: how do you get your data into R?
+* Manipulation: how do you filter, summarise, mutate et?
+* Visualisation: how do you explore your data visually?
+* Modelling: once you have a precise question, how do you answer it with a model?
+* Reporting: once you've figure out the solution, how do you communicate it to others?
+
+You should also invest some time in learning how to be a productive R programmer (e.g. http://adv-r.had.co.nz).
+
+Start by learning the basics of functional programming - this will have the biggest payoff for your productivity in R.
+
+Source: [Hadley's Gist](https://gist.github.com/hadley/820f09ded347c62c2864)
+
+--- 
+
+### RStudio 
+
+* Editor 
+
+* Environment
+
+* Console
+
+* Plot
+
+### Disclaimer 
+
+If you’re serious about learning, you will need to read **several books** (at some point). [1]
+
+There are **a lot** of R books out there. Even before you get to into R for specific disciplines (graphics, computational biology, stock analysis [good source of figures!])
+
+
+> R doesn’t protect you from yourself: you can easily shoot yourself in the foot.
+> As long as you don’t aim the gun at your foot and pull the trigger, you won’t have a problem.
+>
+> -- Hadley Wickham
+
+We will try to explore the elegance, the flexibility, and the power of the R language.
+Unfortunately, there is a bit of mess on the surface, the beauty is deeper. [2]
+
+1. [Peter's stats stuff](http://ellisp.github.io/blog/2017/01/14/books)
+2. [Review of Advanced R](http://www.burns-stat.com/review-of-advanced-r-by-hadley-wickham/)
+
+---
+
+Why R?
+
+* Free and Open-source 
+
+* Broad and wide software package repositories
+    * statisticians
+    * data scientists
+    * bioinformaticians
+    * computational biologists
+
+* Visualizations
+
+__R is not a programming Swiss-army knife__ , but it is a really great tool.
+
+---
+
+### R software repositories:
+
+Comprehensive R Archive Network (CRAN)
+
+```{r, eval=FALSE}
+install.packages("ggplot2")
+```
+
+Bioconductor
+
+```{r, eval=FALSE}
+source("http://bioconductor.org/biocLite.R")
+biocLite("limma")
+```
+
+Git repositories (Github, Bitbucket, Gitorious ...)
+
+```{r, eval=FALSE}
+library(devtools)
+install_github("hadley/devtools")
+```
+
+
+
+---
+
+### Supplemental Links Section
+
+[Programming with R - Software Carpentry](http://swcarpentry.github.io/r-novice-inflammation/)
+
+[R for Data Science - Hadley Wickham](http://r4ds.had.co.nz/)
+
+__[Advanced R - Hadley Wickham](http://adv-r.had.co.nz/)__
+
+[Data Analysis and Visualization Using R](http://varianceexplained.org/RData/)
+
+[Efficient R programming - Colin Gillespie & Robin Lovelace](https://csgillespie.github.io/efficientR/)
+
+[Biostatistics 753 and 754 - Department of Biostatistics at Johns Hopkins](https://github.com/jtleek/jhsph753and4)
+
+___[PH525x series - Biomedical Data Science](http://genomicsclass.github.io/book/)___
+
+[TryR by O'Reilly Code School](http://tryr.codeschool.com/)
+
+[The Art of R Programming - Norman Matloff](http://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)
+
+[Videos from Coursera's Computing for Data Analysis course on R](http://blog.revolutionanalytics.com/2012/12/coursera-videos.html)
+
+[Intro to R - Google Developers](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK9qQfztXeybpHvru-TrqAP)
+
+[R Statistical Programming Language - Fundamentals](https://www.youtube.com/playlist?list=PLpsTyTtPW1iSKzhXRUzsWv9YgW5V1EIyV)
+
+[Learning Statistics with R](http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/)
+
+[R Bootcamp - Jared Knowles - Wisconsin](https://www.jaredknowles.com/r-bootcamp/)
+
+[RStudio cheatsheets](http://www.rstudio.com/resources/cheatsheets/)
+
+
